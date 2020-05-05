@@ -1,0 +1,312 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 05, 2020 at 04:28 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bus`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bus`
+--
+
+CREATE TABLE `bus` (
+  `id` int(20) NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `state` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bus_t`
+--
+
+CREATE TABLE `bus_t` (
+  `id` tinyint(1) NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `seat` int(5) NOT NULL,
+  `price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client`
+--
+
+CREATE TABLE `client` (
+  `c_email` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `c_fname` int(20) NOT NULL,
+  `c_lname` int(20) NOT NULL,
+  `c_contact` int(12) NOT NULL,
+  `c_password` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `c_level` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fname`
+--
+
+CREATE TABLE `fname` (
+  `id` int(20) NOT NULL,
+  `name` varchar(25) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lname`
+--
+
+CREATE TABLE `lname` (
+  `id` int(20) NOT NULL,
+  `name` varchar(25) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manager`
+--
+
+CREATE TABLE `manager` (
+  `m_email` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `m_fname` int(20) NOT NULL,
+  `m_lname` int(20) NOT NULL,
+  `m_contact` int(12) NOT NULL,
+  `m_password` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `m_level` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meal`
+--
+
+CREATE TABLE `meal` (
+  `id` int(20) NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `c_email` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `bus_id` int(20) NOT NULL,
+  `meal_id` int(20) NOT NULL,
+  `time` datetime NOT NULL,
+  `price` int(10) NOT NULL,
+  `seat_num` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position`
+--
+
+CREATE TABLE `position` (
+  `id` int(10) NOT NULL,
+  `name` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `route`
+--
+
+CREATE TABLE `route` (
+  `s_s` int(20) NOT NULL,
+  `e_s` int(20) NOT NULL,
+  `distance` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_b_r`
+--
+
+CREATE TABLE `r_b_r` (
+  `bus_id` int(20) NOT NULL,
+  `route_id` int(20) NOT NULL,
+  `seat_c` int(10) NOT NULL,
+  `s_time` datetime NOT NULL,
+  `e_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `station`
+--
+
+CREATE TABLE `station` (
+  `id` int(20) NOT NULL,
+  `name` varchar(25) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stuff`
+--
+
+CREATE TABLE `stuff` (
+  `s_email` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `s_fname` int(20) NOT NULL,
+  `s_lname` int(20) NOT NULL,
+  `s_contact` int(12) NOT NULL,
+  `s_password` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `s_level` tinyint(1) NOT NULL,
+  `s_position` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bus`
+--
+ALTER TABLE `bus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bus_t`
+--
+ALTER TABLE `bus_t`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`c_email`);
+
+--
+-- Indexes for table `fname`
+--
+ALTER TABLE `fname`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lname`
+--
+ALTER TABLE `lname`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `manager`
+--
+ALTER TABLE `manager`
+  ADD PRIMARY KEY (`m_email`);
+
+--
+-- Indexes for table `meal`
+--
+ALTER TABLE `meal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`c_email`,`bus_id`) USING BTREE;
+
+--
+-- Indexes for table `position`
+--
+ALTER TABLE `position`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `route`
+--
+ALTER TABLE `route`
+  ADD PRIMARY KEY (`s_s`,`e_s`) USING BTREE;
+
+--
+-- Indexes for table `r_b_r`
+--
+ALTER TABLE `r_b_r`
+  ADD PRIMARY KEY (`bus_id`,`route_id`) USING BTREE;
+
+--
+-- Indexes for table `station`
+--
+ALTER TABLE `station`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stuff`
+--
+ALTER TABLE `stuff`
+  ADD PRIMARY KEY (`s_email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fname`
+--
+ALTER TABLE `fname`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lname`
+--
+ALTER TABLE `lname`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `meal`
+--
+ALTER TABLE `meal`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `position`
+--
+ALTER TABLE `position`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `station`
+--
+ALTER TABLE `station`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
