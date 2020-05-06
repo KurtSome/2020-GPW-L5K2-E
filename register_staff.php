@@ -19,7 +19,7 @@ if(isset($_POST["tj"])){
 	echo "<script language='javascript'>alert('Make sure password cannot be empty！');</script>";
 }else{
       date_default_timezone_set("PRC");
-	  $sql="insert into users(name,contact，email，password,date)values('".$name."','".$contact."','".$email."','".$password."',now())"	;
+	  $sql="insert into staff(name,contact，email，password,date)values('".$name."','".$contact."','".$email."','".$password."',now())"	;
 	  mysqli_query($con,$sql);
 	 echo "<script language='javascript'>alert('Registered successfully！');location.href='login_stuff.php';</script>";
 }
