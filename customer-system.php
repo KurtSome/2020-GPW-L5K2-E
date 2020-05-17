@@ -37,9 +37,9 @@ include('customer-system-header.html');
   <!-- Content section -->
   <section class="py-5">
     <div class="container">
-      <h1>Section Heading</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+      <a href="order-ticket.php"><h1>Order Tickets</h1></a>
+      <p class="lead">Choosing a line that you want. <a href="order-ticket.php">Click Here</a></p>
+      <p>"Please check business tickets or economic tickets, and you can order a meal during the trip. Have good time.</p>
     </div>
     <div class="searching-box">
       
