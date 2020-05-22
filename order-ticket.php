@@ -1,5 +1,6 @@
 <?php
 // make db conection
+require('logincheck.php');
 require('db.php');
 include('customer-system-header.html');
 
