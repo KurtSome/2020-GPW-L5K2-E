@@ -1,3 +1,51 @@
+<?php
+// make db conection
+require('db.php');
+include('customer-system-header.html');
+
+if (isset($_POST['submit'])) {
+    if (empty($_POST['c_identification']) || empty($_POST['c_password'])) {
+        $error = "username or password is empty";
+    } else { 
+        // Save username & password in a variable
+        $username = $_POST['c_identification'];
+        $password = $_POST['c_password'];
+
+        // 2. Prepare query
+        $query  = "SELECT c_identification, c_password "; 
+        $query .= "FROM customer ";
+        $query .= "WHERE c_identification = '$username' AND c_password = '$password' ";
+
+        // 2. Execute query
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("query is wrong");
+        }
+
+        // Save data to $row
+        $row = mysqli_fetch_array($result);
+        
+        // Check how many answers did we get
+        $numrows=mysqli_num_rows($result);
+        if ($numrows == 1) {
+            // Start to use sessions
+            session_start();
+            
+            // Create session variables
+            $_SESSION['login_user'] = $username;
+            header('location: customer-system.php');
+            } else {
+            echo "Login failed!!!!!!!!!!!!!";
+        }
+        
+        // 4. free results
+        mysqli_free_result($result);
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
