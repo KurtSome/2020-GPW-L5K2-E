@@ -179,21 +179,21 @@ if (isset($_POST['submit'])) {
 
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image" style="background-image: url('https://unsplash.it/1900/1080?image=1081');"></div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form action="../login.php" method="post">
+              <form action="login.php" method="post">
                 <div class="form-label-group">
-                  <input type="username" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
+                  <input type="c_identification" id="inputUsername" class="form-control" placeholder="Username" name="c_identification" required autofocus>
                   <label for="inputUsername">Username</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                  <input type="c_password" id="inputPassword" class="form-control" placeholder="Password" name="c_password" required>
                   <label for="inputPassword">Password</label>
                 </div>
 
