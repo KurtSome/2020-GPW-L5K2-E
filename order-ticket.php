@@ -1,6 +1,5 @@
 <?php
 // make db conection
-require('logincheck.php');
 require('db.php');
 include('customer-system-header.html');
 
@@ -73,7 +72,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row["bus_started"] . "</td>";
     echo "<td>" . $row["bus_end"] . "</td>";
     echo "<td>" . $row["bus_comment"] . "</td>";
-    echo "<td><a href='customerdetail.php?id=" . $row["c_id"] . "'>Order</a></td>";
+    echo "<td><a href='information-ticket.php?id=" . $row["bus_id"] . "'>Order</a></td>";
     echo "</tr>";
 }
           
