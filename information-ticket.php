@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row["ticket_level"] . "</td>";
     echo "<td>" . $row["ticket_price"] . "</td>";
     echo "<td>" . $row["ticket_information"] . "</td>";
-    echo "<td><a href='customerdetail.php?id=" . $row["ticket_id"] . "'>Next</a></td>";
+    echo "<td><a href='order-form.php'>Next</a></td>";
     echo "</tr>";
 }
           
@@ -88,12 +88,6 @@ while ($row = mysqli_fetch_array($result)) {
         </div>
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -106,5 +100,5 @@ while ($row = mysqli_fetch_array($result)) {
 <?php
             
 mysqli_close($connection);
-
+include('customer-system-footer.html');
 ?>      
