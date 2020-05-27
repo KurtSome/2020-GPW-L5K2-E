@@ -1,7 +1,6 @@
 <?php
 // make db conection
 require('db.php');
-include('customer-system-header.html');
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['c_identification']) || empty($_POST['c_password'])) {
@@ -218,3 +217,8 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+<?php
+            
+mysqli_close($connection);
+include('customer-system-footer.php');
+?>      
