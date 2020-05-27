@@ -1,7 +1,8 @@
 <?php
 // make db conection
+require("logincheck.php");
 require('db.php');
-include('customer-system-header.html');
+include('customer-system-header.php');
 
 $getid = $_GET['id'];
 
@@ -100,5 +101,5 @@ while ($row = mysqli_fetch_array($result)) {
 <?php
             
 mysqli_close($connection);
-include('customer-system-footer.html');
+include('customer-system-footer.php');
 ?>      
