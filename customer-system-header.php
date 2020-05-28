@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Tickets</a>
+          <a class="nav-link" href="my-ticket.php">My Tickets</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">My meal</a>
