@@ -2,7 +2,6 @@
 // make db conection
 require("logincheck.php");
 require('db.php');
-include('customer-system-header.php');
 
 $getid = $_GET['id'];
 
@@ -13,12 +12,12 @@ if ($_POST['submit']) {
 
 
   // 2. Do a query
-  $query  = "INSERT INTO order (order_date, order_pay, c_identification) "; 
+  $query  = "INSERT INTO `order` (`order_date`, `order_pay`, `c_identification`) "; 
   $query .= "VALUES ('$date', '$pay', '$cid') ";
 
-  echo $query;
-  
+
   $result = mysqli_query($connection, $query);
+  header('location: order-ticket.php');
 }
 
 ?>
@@ -46,7 +45,49 @@ if ($_POST['submit']) {
 <body>
 
   <!-- Navigation -->
+  <head>
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Chengdu Bus Company</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/full-width-pics.css" rel="stylesheet">
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="customer-system.php">Chengdu Bus Company</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="customer-system.php">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="my-ticket.php">My Tickets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My meal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <!-- Header - set the background image for the header in the line below -->
   <div class="container-fluid">
