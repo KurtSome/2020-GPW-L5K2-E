@@ -54,7 +54,7 @@ $result = mysqli_query($connection, $query);
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="">Choose one you want</h4>
+              <h4 class="">Remember Ticket ID that you choose!</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row["ticket_level"] . "</td>";
     echo "<td>" . $row["ticket_price"] . "</td>";
     echo "<td>" . $row["ticket_information"] . "</td>";
-    echo "<td><a href='order-form.php'>Next</a></td>";
+    echo "<td><a href='order-ticket-submit.php?id=" . $row["ticket_id"] . "'>Order</a></td>";
     echo "</tr>";
 }
           
