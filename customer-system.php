@@ -38,8 +38,8 @@ include('customer-system-header.php');
   <!-- Content section -->
   <section class="py-5">
     <div class="container">
-      <a href="order-ticket.php"><h1>Order Tickets</h1></a>
-      <p class="lead">Choosing a line that you want. <a href="order-ticket.php">Click Here</a></p>
+      <a href="order-form.php"><h1>Order Tickets</h1></a>
+      <p class="lead">Choosing a line that you want. <a href="order-form.php">Click Here</a></p>
       <p>"Please check business tickets or economic tickets, and you can order a meal during the trip. Have good time.</p>
     </div>
     <div class="searching-box">
