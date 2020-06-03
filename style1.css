@@ -1,0 +1,141 @@
+@import 'https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css';
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+.sidebar{
+    float: left;
+    width: 100px;
+    height: 100%;
+    margin-left: -100px;
+    background: #2c3e50;
+    overflow:hidden;
+    transition: 0.8s all;
+}
+.side{
+    margin-left: 0;
+}
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+}
+.sidebar ul li{
+    list-style: none;
+    font-size:20px;
+    color: white;
+    text-align: center;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    display: block;
+    transition: 0.6s all;
+}
+.sidebar ul li a:hover{
+    background: #34495e;
+}
+.btn{
+    float: left;
+    padding: 0 10px;
+    font-size: 40px;
+    text-decoration: none;
+    color: #2c5e50;
+    font-family: ionicons;
+    cursor: pointer;
+}
+.btn:before{
+    content:'\f32a';
+}
+.btnc:before{
+    content:'\f2c0';
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(http://img4.99114.com/group10/M00/17/7F/rBADs1zeNvCAQdPPAAMae8eJLWE890.jpg)
+}
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    padding: 20px;
+    background-color: azure;
+    height: 400px;
+    width: 300px;
+}
+.login .logo{
+    font-size:20px;
+    color: #757575;
+    text-align: center;
+}
+.login h1{
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color: #757575;
+}
+.login input[type='text'], input[type="password"]{
+    border: none;
+    border-bottom: 3px solid #757575;
+    width: 100%;
+    padding: 5px 0;
+    letter-spacing: 2px;
+    background-color: rgba(0,0,0,0);
+    transition: border-bottom .45s;
+}
+.login input[type='text']:focus, input[type="password"]:focus{
+    border-bottom-color: #f7abe9;
+}
+.login input[type="submit"]{
+    border: 2px solid #fff;
+    height: 30px;
+    width:100%;
+    background-color: #1eeb8e;
+    color: #fff;
+    transition: border .5s;
+    margin: 40px 0;
+}
+.login input[type="submit"]:hover{
+    border: 2px solid #1eeb8e;
+
+}
+.table1 table {
+    width:100%;
+    margin:15px 0;
+    border:0;
+}
+.table1 th {
+    background-color:#1E90FF;
+    color:#FFFFFF
+}
+.table1,.table th,.table td {
+    font-size:0.95em;
+    text-align:center;
+    padding:4px;
+    border-collapse:collapse;
+}
+.table1 th,.table td {
+    border: 1px solid #7ebffe;
+    border-width:1px 0 1px 0
+}
+.table1 tr {
+    border: 1px solid #7ebffe;
+}
+.table1 tr:nth-child(odd){
+    background-color:#b4dafe;
+}
+.table1 tr:nth-child(even){
+    background-color:#fdfdfd;
+}

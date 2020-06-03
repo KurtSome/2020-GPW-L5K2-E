@@ -1,9 +1,9 @@
 <?php
 
 session_start();
+session_destroy();
 
-if (session_destroy()) {
-    header('location: un-customer-system.php');
-}
+// Change page to login
+header('Location: login.php');
 
 ?>

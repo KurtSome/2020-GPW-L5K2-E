@@ -3,7 +3,7 @@
 require_once('db.php');
 
 //Do a query
-$query = "SELECT * FROM bus ";
+$query = "SELECT * FROM order ";
 
 $result = mysqli_query($connection, $query);
 
@@ -25,27 +25,17 @@ if (!$result) {
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                  <td>Bus_id</td>
-                  <td>Start</td>
-                  <td>End</td>
-                  <td>Meal moment</td>
-                  <td>Ticket amount</td>
-                  <td>Bus comment</td>
-                  <td>Update</td>
+                  <td>Date</td>
+                  <td>Pay</td>
                   <td>Delete</td>
                   </thead>
 
 <?php
 while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>" . $row["bus_id"] . "</td>";
-    echo "<td>" . $row["bus_started"] . "</td>";
-    echo "<td>" . $row["bus_end"] . "</td>";
-    echo "<td>" . $row["bus_meal_amount"] . "</td>";
-    echo "<td>" . $row["bus_ticket_amount"] . "</td>";
-    echo "<td>" . $row["bus_comment"] . "</td>";
-    echo "<td><a href='updatebus.php?id=" . $row["id"] . "'>Update</a></td>";
-    echo "<td><a href='deletebus.php?id=" . $row["id"] . "'>Delete</a></td>";
+    echo "<td>" . $row["order_date"] . "</td>";
+    echo "<td>" . $row["order_pay"] . "</td>";
+    echo "<td><a href='deleteorder.php?id=" . $row["id"] . "'>Delete</a></td>";
     echo "</tr>";
 }
  ?>
