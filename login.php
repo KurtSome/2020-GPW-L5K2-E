@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
             // Start to use sessions
             session_start();
             
+            $_SESSION['user_id'] = $userid
             // Create session variables
             $_SESSION['login_user'] = $username;
             header('location: customer-system.php');
