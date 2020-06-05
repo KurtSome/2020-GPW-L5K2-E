@@ -4,14 +4,12 @@ require("logincheck.php");
 require('db.php');
 include('customer-system-header.php');
 
-$getid = $_GET['id'];
+//$query .= "WHERE customer.c_identification = $username ";
 
 $query = "SELECT customer.c_identification, customer.c_name, `order`.`order_date`, `order`.`order_id`, order_product.ticket_id, order_product.order_p_comment ";
 $query .="FROM (customer INNER JOIN `order` ON customer.c_identification = `order`.`c_identification`) ";
 $query .= "INNER JOIN `order_product` ON `order`.`order_id` = `order_product`.`order_id` ";
-$query .= "WHERE customer.c_identification = $getid ";
 
-echo $query;
     
 $result = mysqli_query($connection, $query);
 
@@ -79,7 +77,6 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row["order_id"] . "</td>";
     echo "<td>" . $row["ticket_id"] . "</td>";
     echo "<td>" . $row["order_p_comment"] . "</td>";
-    echo "<td><a href='order-ticket-submit.php?id=" . $row["ticket_id"] . "'>Order</a></td>";
     echo "</tr>";
 }
           
