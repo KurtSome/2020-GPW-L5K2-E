@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +32,9 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="my-order.php">My Orders</a>
+        </li>     
         <li class="nav-item">
           <a class="nav-link" href="my-ticket.php">My Tickets</a>
         </li>
