@@ -32,7 +32,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Tickets</a>
+          <a class="nav-link" href="my-order.php">My Orders</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="my-tickets">My Tickets</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">My meal</a>
