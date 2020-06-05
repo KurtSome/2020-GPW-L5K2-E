@@ -31,9 +31,10 @@ include('customer-system-header.php');
 
 
   <!-- Header - set the background image for the header in the line below -->
-  <header class="py-5 bg-image-full" style="background-image: url('https://image.baidu.com/search/detail?ct=503316480&z=&tn=baiduimagedetail&ipn=d&word=%E8%8B%B1%E5%9B%BDbus%E5%AE%98%E7%BD%91&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=-1&hd=&latest=&copyright=&cs=3302294045,2426532709&os=2290345771,540492404&simid=3360597861,62584341&pn=0&rn=1&di=29700&ln=1267&fr=&fmq=1588667085661_R&ic=&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=0,0&istype=2&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&objurl=http%3A%2F%2Fjynews.zjol.com.cn%2Fpic%2F0%2F10%2F08%2F56%2F10085659_995069.jpg&rpstart=0&rpnum=0&adpicid=0&force=undefined');">
-    <img class="img-fluid d-block mx-auto" src="http://placehold.it/200x200&text=Logo" alt="">
+  <header class="py-5 bg-image-full" style="background-image: url('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3302294045,2426532709&fm=26&gp=0.jpg');">
+  <div style="height: 200px;"></div>
   </header>
+
 
   <!-- Content section -->
   <section class="py-5">
